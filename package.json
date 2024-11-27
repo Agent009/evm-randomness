@@ -8,6 +8,7 @@
     "test": "hardhat test",
     "hh:accounts": "hardhat accounts",
     "hh:clean": "hardhat clean",
+    "hh:test": "hardhat run ./scripts/Test.ts",
     "nqr:test": "hardhat run ./scripts/NotQuiteRandom/Test.ts",
     "pr:test": "hardhat run ./scripts/PseudoRandom/Test.ts",
     "random:test": "hardhat run ./scripts/Random/Test.ts"

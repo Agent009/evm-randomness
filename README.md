@@ -10,6 +10,8 @@ npx hardhat node
 ## Scripts
 
 ```bash
-npm run sorted:test
-npm run correct-sorted:test
+npm run hh:test
+npm run nqr:test
+npm run pr:test
+npm run random:test
 ```

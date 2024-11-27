@@ -1,5 +1,4 @@
 import { viem } from "hardhat";
-import { recoverMessageAddress, hexToSignature } from "viem";
 import * as readline from "readline";
 import { mine } from "@nomicfoundation/hardhat-network-helpers";
 
@@ -9,7 +8,7 @@ async function main() {
     output: process.stdout,
   });
   rl.question(
-    "Pick an operation: \n Options: \n [1]: Random from block hash \n [2]: Toss a coin \n [3]: Message signature \n [4]: Random from a sealed seed \n [5]: Random from block hash plus a sealed seed \n [6]: Random from randao \n",
+    "Pick an operation: \n Options: \n [1]: Random from block hash \n [2]: Toss a coin\n",
     (answer) => {
       console.log(`You picked: ${answer}`);
       const option = Number(answer);
@@ -20,18 +19,6 @@ async function main() {
         case 2:
           tossCoin();
           break;
-        case 3:
-          // TODO
-          break;
-        case 4:
-          // TODO
-          break;
-        case 5:
-          // TODO
-          break;
-        case 6:
-          // TODO
-          break;
         default:
           console.log("Invalid");
           break;
@@ -41,7 +28,7 @@ async function main() {
   );
 }
 
-async function blockHashRandomness() {
+export async function blockHashRandomness() {
   const publicClient = await viem.getPublicClient();
   const currentBlock = await publicClient.getBlock();
   const contract = await viem.deployContract("NotQuiteRandom");
@@ -75,7 +62,7 @@ async function blockHashRandomness() {
   );
 }
 
-async function tossCoin() {
+export async function tossCoin() {
   const publicClient = await viem.getPublicClient();
   const currentBlock = await publicClient.getBlock();
   const contract = await viem.deployContract("NotQuiteRandom");
@@ -119,7 +106,7 @@ async function tossCoin() {
   );
 }
 
-tossCoin().catch((error) => {
+main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
