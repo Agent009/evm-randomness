@@ -1,7 +1,7 @@
-import {viem} from "hardhat";
-import {recoverMessageAddress, hexToSignature} from "viem";
+import { viem } from "hardhat";
+import { recoverMessageAddress, hexToSignature } from "viem";
 import * as readline from "readline";
-import {mine} from "@nomicfoundation/hardhat-network-helpers";
+import { mine } from "@nomicfoundation/hardhat-network-helpers";
 
 async function main() {
   const rl = readline.createInterface({
@@ -119,7 +119,7 @@ async function tossCoin() {
   );
 }
 
-blockHashRandomness().catch((error) => {
+tossCoin().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
