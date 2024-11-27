@@ -1,7 +1,7 @@
 import * as readline from "readline";
-import { blockHashRandomness, tossCoin } from "./NotQuiteRandom/Test";
-import { randao } from "./Random/Test";
-import { randomSealedSeed, sealedSeed, signature } from "./PseudoRandom/Test";
+import { blockHashRandomness, tossCoin } from "./NotQuiteRandom/lib";
+import { randao } from "./Random/lib";
+import { randomSealedSeed, sealedSeed, signature } from "./PseudoRandom/lib";
 
 async function main() {
   const rl = readline.createInterface({
